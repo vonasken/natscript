@@ -1,0 +1,5 @@
+<textField hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
+<textField hint="Password" secure="true" />
+
+<button text="Sign in" />
+<button text="Sign up for Groceries" />
