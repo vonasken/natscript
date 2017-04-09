@@ -1,3 +1,1 @@
-exports.pageLoaded = function() {
-
-};
+var camera = require("camera");
