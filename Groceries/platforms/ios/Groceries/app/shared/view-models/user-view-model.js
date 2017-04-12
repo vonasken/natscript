@@ -1,3 +1,4 @@
+var validator = require("email-validator");
 var config = require("../../shared/config");
 var fetchModule = require("fetch");
 var Observable = require("data/observable").Observable;
@@ -46,6 +47,11 @@ function User(info) {
         }).then(handleErrors);
     };
 
+    viewModel.isValidEmail = function() {
+        var email = this.get("email");
+        return validator.validate(email);
+    };
+    
     return viewModel;
 }
 

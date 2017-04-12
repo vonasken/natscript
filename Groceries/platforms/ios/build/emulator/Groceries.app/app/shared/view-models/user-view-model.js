@@ -1,3 +1,4 @@
+var validator = require("email-validator");
 var config = require("../../shared/config");
 var fetchModule = require("fetch");
 var Observable = require("data/observable").Observable;
@@ -10,6 +11,27 @@ function User(info) {
         email: info.email || "",
         password: info.password || ""
     });
+
+    viewModel.login = function() {
+    return fetchModule.fetch(config.apiUrl + "oauth/token", {
+        method: "POST",
+        body: JSON.stringify({
+            username: viewModel.get("email"),
+            password: viewModel.get("password"),
+            grant_type: "password"
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(handleErrors)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        config.token = data.Result.access_token;
+    });
+};
 
     viewModel.register = function() {
         return fetchModule.fetch(config.apiUrl + "Users", {
@@ -25,6 +47,11 @@ function User(info) {
         }).then(handleErrors);
     };
 
+    viewModel.isValidEmail = function() {
+        var email = this.get("email");
+        return validator.validate(email);
+    };
+    
     return viewModel;
 }
 
