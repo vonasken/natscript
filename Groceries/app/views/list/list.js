@@ -1,3 +1,4 @@
+var socialShare = require("nativescript-social-share");
 var GroceryListViewModel = require("../../shared/view-models/grocery-list-view-model");
 var dialogsModule = require("ui/dialogs");
 var observableModule = require("data/observable")
