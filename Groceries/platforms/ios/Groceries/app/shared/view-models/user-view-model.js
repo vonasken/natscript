@@ -1,7 +1,7 @@
 var validator = require("email-validator");
 var config = require("../../shared/config");
 var fetchModule = require("fetch");
-var Observable = require("data/observable").Observable;
+
 
 function User(info) {
     info = info || {};
