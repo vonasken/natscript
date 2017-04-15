@@ -51,7 +51,8 @@ function User(info) {
         var email = this.get("email");
         return validator.validate(email);
     };
-    
+
+
     return viewModel;
 }
 

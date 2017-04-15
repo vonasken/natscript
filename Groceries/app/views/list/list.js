@@ -52,3 +52,13 @@ exports.add = function() {
     // Empty the input field
     pageData.set("grocery", "");
 };
+
+exports.share = function() {
+    var list = [];
+    var finalList = "";
+    for (var i = 0, size = groceryList.length; i < size ; i++) {
+        list.push(groceryList.getItem(i).name);
+    }
+    var listString = list.join(", ").trim();
+    socialShare.shareText(listString);
+};
