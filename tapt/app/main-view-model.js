@@ -17,8 +17,7 @@ function createViewModel() {
     viewModel.onTap = function() {
         this.counter--;
         this.set("message", getMessage(this.counter));
-        timer.setTimeout(() => {
-        }, 10);
+        
     }
 
     return viewModel;
