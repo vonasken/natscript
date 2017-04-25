@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  devise_for :contractors
   devise_for :users
   resources :users
 root to: "home#index"
