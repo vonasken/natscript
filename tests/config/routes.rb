@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   get '/' => 'welcome#index'
 
-  
+  get '/about' => 'welcome#about'
+
+  get '/tips' => 'welcome#tips'
+
+
 
   resources :charges
 
