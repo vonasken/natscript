@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  
   devise_for :landlords
+  devise_for :users
   get '/' => 'welcome#index'
 
   get '/about' => 'welcome#about'
