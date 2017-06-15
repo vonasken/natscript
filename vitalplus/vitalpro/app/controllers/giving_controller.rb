@@ -1,0 +1,2 @@
+class GivingController < ApplicationController
+end
