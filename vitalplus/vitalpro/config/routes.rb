@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :professionals
   get "/", to: 'vital#home'
 
   get "giving", to: 'giving#donations'
